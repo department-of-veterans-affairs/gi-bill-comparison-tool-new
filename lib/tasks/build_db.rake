@@ -2,7 +2,7 @@ require 'csv'
 
 desc "Load database from CSV -- invoke with rake load_csv[file_name.csv]"
 task :load_csv, [:csv_file] => [:environment, :build_db] do |t, args|
-  puts "Loading #{args[:csv_file]} ... "
+  puts "Loading #{args[:csv_file]} (please wait, this takes some time)"
 
   # Load all the institutions from file
   institutions = []
@@ -13,6 +13,7 @@ task :load_csv, [:csv_file] => [:environment, :build_db] do |t, args|
   end
 
   # Save the loaded institutions
+  puts "Saving data (please wait, this takes some time)"
   ActiveRecord::Base.transaction do
     Institution.import institutions
   end
