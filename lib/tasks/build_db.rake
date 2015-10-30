@@ -2,21 +2,20 @@ require 'csv'
 
 desc "Load database from CSV -- invoke with rake load_csv[file_name.csv]"
 task :load_csv, [:csv_file] => [:environment, :build_db] do |t, args|
-  puts "Loading #{args[:csv_file]} ... "
-  count = 0
+  puts "Loading #{args[:csv_file]} (please wait, this takes some time)"
 
+  # Load all the institutions from file
+  institutions = []
+  CSV.foreach(args[:csv_file], headers: true, encoding: "iso-8859-1:utf-8", header_converters: :symbol) do |row|
+    row = row.to_hash
+    LoadCsvHelper.convert(row)
+    institutions << Institution.new(row)
+  end
+
+  # Save the loaded institutions
+  puts "Saving data (please wait, this takes some time)"
   ActiveRecord::Base.transaction do
-    CSV.foreach(args[:csv_file], headers: true, encoding: "iso-8859-1:utf-8", header_converters: :symbol) do |row|
-  		count += 1
-      
-      row = row.to_hash
-  		LoadCsvHelper.convert(row)
-
-      # puts "#{row[:facility_code]}: #{row[:institution]}" 
-  		Institution.create(row)
-
-  		print "\r Records: #{count}" 
-    end
+    Institution.import institutions
   end
 
 	puts "\nDone ... Woop Woop!"
@@ -37,8 +36,9 @@ task build_db: :environment do
 	puts "Running migrations ..."
 	Rake::Task['db:migrate'].invoke
 
-	puts "Seeding database ..."
-	Rake::Task['db:seed'].invoke
+  # Nothing is in seeds.rb right now, uncomment
+	# puts "Seeding database ..."
+	# Rake::Task['db:seed'].invoke
 
 	puts "Done!\n\n\n"
 end
