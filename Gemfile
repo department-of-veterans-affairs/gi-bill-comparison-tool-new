@@ -49,7 +49,7 @@ group :development do
 end
 
 # MPH Test environment additions
-group :development, :test do 
+group :development, :test do
 	gem 'rspec-rails', '~> 3.3.3'
   gem 'capybara', '~> 2.5.0'
   gem 'factory_girl_rails', '~> 4.5.0'
@@ -64,3 +64,5 @@ group :development do
   gem 'capistrano-env-config', git: "https://github.com/greggersh/capistrano-env-config", branch: "dotenv-2.0.2"
 end
 
+# Speed up rake load_csv with bulk inserts
+gem 'activerecord-import', '~> 0.4.0'
