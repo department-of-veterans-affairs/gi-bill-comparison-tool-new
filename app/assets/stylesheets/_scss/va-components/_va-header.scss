@@ -17,7 +17,7 @@ margin-bottom: 1.7rem;
 }
 
 .logo h1 a {
-  background: url(../logo/logo.png) top left no-repeat;
+  background: url(asset_path('logo/logo.png')) top left no-repeat;
   height: 50px;
   background-size: contain;
   text-indent: 180%;
