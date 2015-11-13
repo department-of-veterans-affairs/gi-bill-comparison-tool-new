@@ -95,16 +95,3 @@ Now that you're all setup, simply start the application:
 Then, open your web browser and navigate to:
 
 `http://127.0.0.1:3000/`
-
-## Troubleshooting Tips
-
-To prevent routing error on jquery pngs, run
-
-```
-rake assets:precompile
-```
-
-To watch SCSS files, run
-```
- sass --watch app/assets/stylesheets/_scss
-```
