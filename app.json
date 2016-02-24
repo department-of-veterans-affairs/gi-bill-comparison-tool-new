@@ -1,6 +1,5 @@
 {
   "name": "gi-bill-comparison-tool",
-  "description": "Helps veterans compares schools that they can use education benefits at",
   "scripts": { "postdeploy":"bundle exec rake load_csv[data.csv]" },
   "addons": ["heroku-postgresql"],
   "buildpacks": []
