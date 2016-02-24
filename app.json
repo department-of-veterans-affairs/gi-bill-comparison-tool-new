@@ -4,6 +4,6 @@
     "postdeploy": "bundle exec rake load_csv[data.csv]"
   },
   "env": {},
-  "addons": [],
+  "addons": ["heroku-postgresql"],
   "buildpacks": []
 }
