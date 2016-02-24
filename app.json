@@ -1,6 +1,9 @@
 {
   "name": "gi-bill-comparison-tool",
-  "scripts": { "postdeploy":"bundle exec rake load_csv[data.csv]" },
-  "addons": ["heroku-postgresql"],
+  "scripts": {
+    "postdeploy": "bundle exec rake load_csv[data.csv]"
+  },
+  "env": {},
+  "addons": [],
   "buildpacks": []
 }
