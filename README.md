@@ -1,3 +1,5 @@
+No changes
+
 # GI Bill Comparison Tool [![Build Status](https://travis-ci.org/department-of-veterans-affairs/gi-bill-comparison-tool.svg?branch=master)](https://travis-ci.org/department-of-veterans-affairs/gi-bill-comparison-tool)
 
 This web-based tool allows a veteran to explore education benefits covered under the [GI Bill](https://en.wikipedia.org/wiki/G.I._Bill).
