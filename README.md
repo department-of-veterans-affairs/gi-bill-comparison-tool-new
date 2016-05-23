@@ -2,7 +2,7 @@
 
 This web-based tool allows a veteran to explore education benefits covered under the [GI Bill](https://en.wikipedia.org/wiki/G.I._Bill).
 
-The application is developed on a Ruby on Rails stack.
+The application is developed on a Ruby on Rails stack. 
 
 ## First Time Setup (Short Version)
 
