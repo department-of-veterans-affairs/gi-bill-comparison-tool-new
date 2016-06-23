@@ -24,23 +24,25 @@
   <div class="row">
     <!-- Home Page Teaser -->
     <div class="small-12 medium-8 columns teaser-container">
-      <h4 class="home-teaser">Learn about education programs and compare estimated benefits by school.</h4>
+
       </div>
   </div>
   <div class="row">
     <div class="small-12 medium-8 columns">
-        
-      <div class="usa-card nested">
-        <div id="about-you" class="usa-card-header nested">
-          Step 1: Tell Us About Yourself
-        </div>
-        <div class="usa-card-content nested">
-          <!-- About Yourself Section -->
+      <h4 class="home-teaser">Learn about education programs and compare estimated benefits by school.</h4>
             <div class="medium-6 columns">
+<!--
+          <div class="row">
+              </div>
+-->
           <%= render partial: 'yourself', locals: { use_label: true } %>
+          <div class="row">
+          <%= render partial: 'your_school', locals: { use_label: true, advanced: true, form_id: '#input-section' } %>
+          </div>
             </div>
             <div class="medium-6 columns teaser-pad teaser-container">
-                <p>Whether you want to apply your GI Bill benefits to college classes or an on-the-job training program, this tool will help you make the most of them.</p>
+                    
+                <p>Whether you want to apply your GI Bill benefits to college classes or an on-the-job training program, the GI Bill Comparison Tool will help you make the most of them.</p>
               
                 <div class="medium-4 columns box">
                     
@@ -67,19 +69,6 @@
                     <span class="teaser-head"><p>Books</p></span>
             </div>
             </div>
-        </div>
-      </div>
-
-        <div class="usa-card">
-          <div id="about-your-school" class="usa-card-header">
-            Step 2: About Your School
-          </div>
-          <div class="usa-card-content">
-              <!-- About Your School Section -->
-              <a name="about_your_school"></a>
-              <%= render partial: 'your_school', locals: { use_label: true, advanced: true, form_id: '#input-section' } %>
-          </div>
-        </div>
       <% end %>
     </div>
       

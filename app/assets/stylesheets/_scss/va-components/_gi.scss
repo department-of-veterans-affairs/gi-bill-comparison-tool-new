@@ -11,6 +11,7 @@ $va-body-accent-color: #FAC922;
 $va-body-background-color: #fff;
 $va-start-color: #008674;
 $va-alert-color: #741B30;
+$va-gray-light: #aeb0b5;
 
 
 
@@ -421,4 +422,8 @@ label{
 }
 #search-filters .usa-card-content{
     padding: 0  1rem 1rem 1rem;
+}
+
+.redback{
+  background: red;
 }
