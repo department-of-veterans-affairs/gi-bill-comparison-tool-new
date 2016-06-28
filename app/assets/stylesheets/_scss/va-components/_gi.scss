@@ -48,7 +48,9 @@ $va-alert-color: #741B30;
 html, body {
   padding: 0;
   margin: 0;
-  font-family: $font-sans; font-weight: 500; color: $va-primary-color;
+  font-family: $font-sans; 
+  font-weight: 500; 
+  // color: $va-primary-color;
   transition: all 0.3s ease-in-out;
 }
 
@@ -83,14 +85,15 @@ a{
 }
 
 .teaser-head{
-    
-    p{
-        font-size: .75rem;
+    p {
+        font-size: 1.2rem !important;
         line-height: 1rem;
     }
 }
 
 .teaser-container{
+    padding-top: 3rem;
+
     @media(max-width: $small-screen) {
         display: none;
     }    
@@ -219,7 +222,7 @@ ul li {
 .applinks{
     text-align: center;
     font-family: $font-sans;
-    font-size: .85rem;
+    font-size: 1.36rem;
     line-height: 4rem;
     margin-right: 2.5rem;
     margin-bottom: 2rem;
@@ -421,4 +424,94 @@ label{
 }
 #search-filters .usa-card-content{
     padding: 0  1rem 1rem 1rem;
+}
+
+
+//========================================================
+// These styles override Foundation styles
+// for visual compatibility with the current vets.gov look
+// Long term goal is to drop Foundation.
+//========================================================
+
+.section.one {
+  color: $color-base;
+
+  button {
+    font-size: inherit;
+  }
+  select, input, button {
+    height: auto;
+  }
+  label {
+    font-size: 1.36rem;
+  }
+
+  #search-button {
+    height: 4.8rem;
+  }
+  select {
+    background-size: 3rem;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+    background-position: 100% 50%;
+  }
+
+  p {
+    font-size: inherit
+  }
+}
+
+
+
+//========================================================
+// These styles should be removed eventually. There's just 
+// too much of a difference between the current vets-website
+// code base and this one to reconcile right now. 
+// (2016-06-29)
+//========================================================
+
+// One off to make the header search box work correctly
+[id=mobile_query] {
+  width: 384px;
+}
+
+.va-notice--banner p {
+  font-size: 1.44rem;  
+}
+
+.usa-social-links {
+  margin-top: 3.2rem;
+}
+
+.va-list--linkgroup, 
+.va-list--linkgroup--inline, 
+.va-list--linkgroup-title {
+  font-size: 1.6rem;
+}
+
+.va-crisis-panel--notouch {
+  @include transform(translateY(250px));
+}
+
+.va-crisis-panel--open {
+   @include transform(translateY(0px));
+}
+
+.va-crisis-panel--touch .va-crisis-line {
+  font-family: inherit;
+}
+
+.va-nav-breadcrumbs-list {
+  font-size: 1.6rem;
+}
+
+.va-nav-breadcrumbs-list.row {
+  margin: 0;
+}
+
+.va-heading-sans {
+  margin: auto 0;
+  font-family:  $font-sans;
+  font-weight: bold;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
 }
