@@ -11,8 +11,64 @@ $va-body-accent-color: #FAC922;
 $va-body-background-color: #fff;
 $va-start-color: #008674;
 $va-alert-color: #741B30;
+$va-gibct-gray-lightest: #fafafa;
+
+//========================================================
+// These styles override USWDS styles for visual
+// compatibility with current vets.gov look
+//========================================================
+select {
+  height: auto;
+}
 
 
+//========================================================
+// These styles override Foundation styles
+// for visual compatibility with the current vets.gov look
+// Long term goal is to drop Foundation.
+//========================================================
+
+.accordion .accordion-navigation > a, 
+.accordion dd > a {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+p, ul, ol, dl {
+  font-size: inherit;
+}
+
+.section.one {
+  color: $color-base;
+
+  button {
+    font-size: inherit;
+  }
+  select, input, button {
+    height: auto;
+  }
+  label {
+    font-size: inherit;
+  }
+
+  #search-button {
+    height: 4.8rem;
+  }
+  select {
+    background-size: 3rem;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+    background-position: 100% 50%;
+  }
+
+  p {
+    font-size: inherit
+  }
+}
+
+table tr th,
+table tr td {
+  font-size: inherit;
+}
 
 // Search
 
@@ -75,10 +131,6 @@ a{
 }
 
 // Home Teaser Block - Lots of styles, I know....rl
-
-#content ul.breadcrumbs li.active {
- margin: 0em;
-}
 
 .teaser-pad{
     padding-left: 2rem;
@@ -242,57 +294,63 @@ ul li {
 
 // All the stuff for showing the form vertically along the top
 .filter-horizontal{
-  border-bottom: solid $color-gray-lightest thin;
-  padding: 0 0;
-
+  padding: 0;
 
   .filter-p[style] {
     display: inline-block !important;
     float: left;
+    line-height: 2.75;
     margin-right: 1rem;
+    margin-left: 2rem;
   }
+  
   .form-group {
-    .filter-item {
-        width: 16%;
-        height: 2.5rem;
-        margin-right: -1rem;
-        float: left;
-        background-image: none;
-        font-size: .85rem;
-        line-height: 1rem;
+    float: left;
+    position: relative;
+    width: 20%;
+    margin-right: 1rem;
+    
+    select {
+      background: $va-gibct-gray-lightest;
+      border-color: #cccccc;
     }
-    &:after {
+    
+    .filter-item {
+      width: 100%;
+      float: left;
+    }
+    
+    &::after {
       font-family: FontAwesome;
       content: "\f013";
       display: inline;
       float: left;
-      left: -10px;
-      margin-top: 6px;
-      background: #fafafa;
-      padding: 3px 3px 3px 6px;
-      position: relative;
+      right: 1px;
+      margin-top: 8px;
+      background: $va-gibct-gray-lightest;
+      padding: 5px 8px;
+      position: absolute;
       pointer-events: none;
-        border-left: solid $color-gray-lightest thin;
- 
+      border-left: solid $color-gray-lightest thin;
     }
   }
 }
 
-.filter-button{
-    height: 2.5rem;
-    padding: .75rem;
-    background-color: #0071bc;
-    & a{
-        color: #fff;
-    }
-    &:visited{
-        color: #fff;
-    }
+.filter-button {
+  font: inherit;
+  background-color: #0071bc;
+
+  & a{
+    color: #fff;
+  }
+  &:visited{
+    color: #fff;
+  }
 }
 
 .search-button-new{
-    height: 4rem;
-    a{color: #fff;}
+  height: 4rem;
+  a{color: #fff;}
 }
 
 // All the stuff for showing the left rail
@@ -344,23 +402,24 @@ ul li {
 
 .search-count{
     margin-left: 1rem;
-//    margin-bottom: 1.7rem;
+
     @media(max-width: $small-screen) {
         font-size: 1rem;
     }
 }
 
-.filter-box{
-    padding: 1rem 1rem;
-    
+.filter-box {
+  padding: 1rem 1rem;
 }
 
 .filter-p{
     margin-bottom: -1rem;
-    label{
-        font-size: .77rem;
-    }
 }
+
+.filter-box .filter-p label {
+  font-size:  1.2rem;
+}
+
 .nopad{
     padding: 0 0 0 0;
 }
@@ -375,7 +434,9 @@ label{
 .nomarginall{margin: 0;}
 
 .action-bar{
-    padding: 15px 0 0 0;
+  background-color: $color-gray-lightest;
+  padding: 15px 0 5px 0;
+  margin: 2rem 0;
 }
 
 
@@ -383,21 +444,19 @@ label{
   column-count:2;
   -moz-column-count:2;
   -webkit-column-count:2;
-    
 }
+
 .text-center{
-    text-align: center;
+  text-align: center;
 }
 
 .about-you{
-    font-size: 1rem;
-    padding: 0;
-    margin: 0;
-    line-height: 2.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .noback{
-    background: none;
+  background: none;
 }
 
 .nopadding{
@@ -424,40 +483,6 @@ label{
 }
 #search-filters .usa-card-content{
     padding: 0  1rem 1rem 1rem;
-}
-
-
-//========================================================
-// These styles override Foundation styles
-// for visual compatibility with the current vets.gov look
-// Long term goal is to drop Foundation.
-//========================================================
-
-.section.one {
-  color: $color-base;
-
-  button {
-    font-size: inherit;
-  }
-  select, input, button {
-    height: auto;
-  }
-  label {
-    font-size: 1.36rem;
-  }
-
-  #search-button {
-    height: 4.8rem;
-  }
-  select {
-    background-size: 3rem;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
-    background-position: 100% 50%;
-  }
-
-  p {
-    font-size: inherit
-  }
 }
 
 
@@ -502,10 +527,6 @@ label{
 
 .va-nav-breadcrumbs-list {
   font-size: 1.6rem;
-}
-
-.va-nav-breadcrumbs-list.row {
-  margin: 0;
 }
 
 .va-heading-sans {
