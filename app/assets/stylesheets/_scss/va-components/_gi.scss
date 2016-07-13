@@ -66,9 +66,13 @@ p, ul, ol, dl {
 }
 
 table tr th,
-table tr td {
+table tr td,
+table thead tr th,
+table thead tr td {
   font-size: inherit;
 }
+
+
 
 // Search
 
