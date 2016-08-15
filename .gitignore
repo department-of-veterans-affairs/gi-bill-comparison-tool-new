@@ -32,3 +32,6 @@
 app/.DS_Store
 app/views/.DS_Store
 vendor/cache
+
+# Ignore application configuration
+/config/application.yml
