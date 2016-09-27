@@ -20,7 +20,6 @@ class InstitutionsController < ApplicationController
     params_to_inputs
 
     @school = Institution.find_by(facility_code: params[:facility_code])
-    render_404 and return if @school.nil?
     @kilter = Kilter.new(Institution.none)
  
     @back_url = @kilter.to_href(search_page_path, @inputs, page: @page)
@@ -30,13 +29,6 @@ class InstitutionsController < ApplicationController
     respond_to do |format|
       format.json { render json: @school }
       format.html
-    end
-  end
-
-  def render_404
-    respond_to do |format|
-      format.html { render text: 'Institution Not Found', status: 404 }
-      format.all { render nothing: true, status: 404 }
     end
   end
 
