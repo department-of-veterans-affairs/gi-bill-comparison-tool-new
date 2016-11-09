@@ -162,16 +162,6 @@ class Kilter
 			end
 		end
 		self
-
-#		@filtered_rset.find_each do |r|
-#			@tracked.keys.each do |k|
-#				# use send to handle columns that may be overriden in models
-#				value = r.send(k.to_s)
-#				@tracked[k][value.to_s] += 1 unless (value.nil? || value.try(:empty?))
-#			end
-#		end
-#
-#		self
 	end
 
 	#############################################################################
