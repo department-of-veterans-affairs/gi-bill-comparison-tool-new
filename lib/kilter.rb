@@ -155,9 +155,9 @@ class Kilter
 		return @tracked[col] unless count_operation
 
 		@tracked.keys.each do |k|
-			groups = @filtered_rset.model.from(@filtered_rset).group(k.to_s).count
+			groups = model.from(@filtered_rset).group(k.to_s).count
 			groups.each do |val,num|
-				@tracked[k][val.to_s] = num unless (val.nil? || val.try(:empty?))
+				@tracked[k][val.to_s] = num unless val.blank?
 			end
 		end
 		self
