@@ -1,5 +1,5 @@
 pipeline {
-  agent label:'vec-testing'
+  agent label:'rails-testing'
   stages {
     stage('Checkout Code') {
       steps {
