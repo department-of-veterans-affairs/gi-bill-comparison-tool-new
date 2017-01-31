@@ -114,4 +114,3 @@ rake assets:precompile
 Are from the va_common gem. To update assets, or header or footer, please go here: 
 
 https://github.com/department-of-veterans-affairs/va_common
-
