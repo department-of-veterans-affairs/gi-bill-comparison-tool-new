@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    label 'rails-testing'
+    label 'vetsgov-general-purpose'
   }
+
   stages {
     stage('Checkout Code') {
       steps {
