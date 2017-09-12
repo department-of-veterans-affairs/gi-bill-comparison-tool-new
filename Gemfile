@@ -8,7 +8,7 @@ source 'https://rubygems.org'
 gem 'va_common', '~> 0.4.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7'
+gem 'rails', '~> 4.2.9'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
